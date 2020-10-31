@@ -1,0 +1,51 @@
+<!--pages/cart/cart.wxml-->
+<van-swipe-cell right-width="{{ 65 }}">
+  <van-cell-group>
+    <van-card
+      custom-class="commdity"
+      num="1"
+      price="3.00"
+      desc="300ml"
+      title="百事可乐"
+      thumb="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604161600505&di=158e641cf1c2fede41ef3b84cc0dae7d&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F00%2F81%2F99%2F8356e4183f27e64.jpg"
+    />
+  </van-cell-group>
+  <view slot="right">删除</view>
+</van-swipe-cell>
+
+<van-swipe-cell right-width="{{ 65 }}">
+  <van-cell-group>
+    <van-card
+      custom-class="commdity"
+      num="2"
+      price="3.00"
+      desc="绿箭无糖"
+      title="绿箭"
+      thumb="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1509541942,3203478360&fm=26&gp=0.jpg"
+    />
+  </van-cell-group>
+  <view slot="right">删除</view>
+</van-swipe-cell>
+
+<van-swipe-cell right-width="{{ 65 }}">
+  <van-cell-group>
+    <van-card
+      custom-class="commdity"
+      num="1"
+      price="5.00"
+      desc="150g"
+      title="康师傅红烧牛肉面"
+      thumb="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2772853155,2330526087&fm=26&gp=0.jpg"
+    />
+  </van-cell-group>
+  <view slot="right">删除</view>
+</van-swipe-cell>
+
+
+
+<!-- 结账栏 -->
+<van-submit-bar
+  price="{{ 1400 }}"
+  button-text="提交订单"
+  bind:submit="onSubmit"
+/>

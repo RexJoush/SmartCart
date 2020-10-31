@@ -1,25 +1,39 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
-    "pages/openapi/openapi",
-    "pages/openapi/serverapi/serverapi",
-    "pages/openapi/callback/callback",
-    "pages/openapi/cloudid/cloudid",
-    "pages/im/im",
-    "pages/im/room/room"
+    "pages/cart/cart",
+    "pages/me/me"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "智能购物车",
     "navigationBarTextStyle": "black"
+    
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#5F9EA0",
+    "borderStyle": "white",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "images/index0.png",
+      "selectedIconPath": "images/index1.png"
+    },
+    {
+      "pagePath": "pages/cart/cart",
+      "text": "购物车",
+      "iconPath": "images/cart0.png",
+      "selectedIconPath": "images/cart1.png"
+    },
+    {
+      "pagePath": "pages/me/me",
+      "text": "我的",
+      "iconPath": "images/me0.png",
+      "selectedIconPath": "images/me1.png"
+    }]
   },
   "sitemapLocation": "sitemap.json"
 }

@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "van-notify": "@vant/weapp/notify/index",
+    "van-notice-bar": "@vant/weapp/notice-bar/index"
+  }
 }

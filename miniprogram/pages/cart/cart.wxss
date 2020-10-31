@@ -1,0 +1,8 @@
+/* pages/cart/cart.wxss */
+page {
+  background: #eee;
+}
+ 
+.commdity {
+  margin-bottom: 10rpx;
+}
