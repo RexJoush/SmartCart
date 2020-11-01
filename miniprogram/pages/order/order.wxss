@@ -1,0 +1,35 @@
+/* pages/order/order.wxss */
+.order {
+  position: relative;
+  display: block;
+  padding: 20rpx;
+  margin: 0rpx 20rpx 20rpx 20rpx;
+  background: white;
+  border-radius: 20rpx;
+}
+.content {
+  padding: 20px;
+  font-size: 12px;
+}
+
+.content .commodity{
+  margin-bottom: 5rpx;
+}
+
+.footer {
+  text-align: right;
+}
+.order .title {
+  font-size: medium;
+  font-weight: bolde;
+}
+
+.order .time {
+  font-size: small;
+  
+}
+
+.order .price {
+  font-size: large;
+  color: red;
+}

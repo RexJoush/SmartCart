@@ -51,23 +51,25 @@
   <text>{{n}}</text>
   </van-col>
   <van-col span="22" offset="1">
-    <van-button round type="info" bind:click="showPopup" size="large" color="#5F9EA0">查看我的二维码</van-button>
-    <!-- <van-cell
+    <!-- <van-button round type="info" bind:click="showPopup" size="large" color="#5F9EA0">查看我的二维码</van-button> -->
+    <van-cell
       custom-class="nav"
       value-class="arrow"
-      icon="comment-o"
-      title="提交反馈"
+      icon="orders-o"
+      title="我的订单"
       is-link
       link-type="navigateTo"
       size="large"
-      bind:click="gotoFeedback"
+      bind:click="gotoOrder"
       center 
-    /> -->
+    />
     <!-- <van-cell title="单元格">
       <van-icon slot="right-icon" name="search" class="custom-icon" />
     </van-cell> -->
   </van-col>
 </van-row>
+
+
 
 <view class="about">
   <van-divider

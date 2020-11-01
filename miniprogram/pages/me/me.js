@@ -43,7 +43,22 @@ Page({
     })
   },
 
-  
+  gotoOrder: function(){
+    wx.getSetting({
+      withSubscriptions: true,
+      success: res => {
+        // console.log(res.authSetting['scope.userInfo']);
+        if(res.authSetting['scope.userInfo']) {
+          wx.navigateTo({
+            url: '/pages/order/order',
+          })
+        } else {
+          setTimeout(this.loginFirst,100);
+        }
+      }
+    })
+  },
+
   // 展示我的二维码
   showQRcode: function () {
     let that = this;

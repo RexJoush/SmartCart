@@ -1,7 +1,10 @@
 {
+  "navigationBarTitleText": "购物车",
+  
   "usingComponents": {
     "van-submit-bar": "@vant/weapp/submit-bar/index",
     "van-card": "@vant/weapp/card/index",
-    "van-swipe-cell": "@vant/weapp/swipe-cell/index"
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-button": "@vant/weapp/button/index"
   }
 }

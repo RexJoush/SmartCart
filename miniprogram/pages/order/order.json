@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "我的订单",
+  "usingComponents": {
+    "van-panel": "@vant/weapp/panel/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-cell-group": "@vant/weapp/cell-group/index"
+  }
+}

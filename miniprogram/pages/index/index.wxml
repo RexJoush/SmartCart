@@ -8,5 +8,38 @@
     custom-class="notice"
     text="{{notice}}"
   />
-
+  <van-row>
+    <van-col span="22" offset="1">
+    <text>{{n}}</text>
+    </van-col>
+    <van-col span="22" offset="1">
+      <van-button round type="info" bind:click="showPopup" size="large" color="#5F9EA0">查看我的二维码</van-button>
+      <!-- <van-cell
+        custom-class="nav"
+        value-class="arrow"
+        icon="comment-o"
+        title="提交反馈"
+        is-link
+        link-type="navigateTo"
+        size="large"
+        bind:click="gotoFeedback"
+        center 
+      /> -->
+      <!-- <van-cell title="单元格">
+        <van-icon slot="right-icon" name="search" class="custom-icon" />
+      </van-cell> -->
+    </van-col>
+  </van-row>
 </van-row>
+
+<!-- 弹出层 -->
+<van-popup show="{{ show }}" bind:close="onClose">
+  <view class="wrapper" style="padding:20px 20px 15px 20px;">
+    <van-image
+      width="500rpx"
+      height="500rpx"
+      fit="cover"
+      src="https://www.rexjoush.com/file/imgs/1.jpg"
+    />
+  </view>
+</van-popup>

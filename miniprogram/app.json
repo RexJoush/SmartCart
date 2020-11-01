@@ -1,7 +1,11 @@
 {
   "pages": [
+    
     "pages/index/index",
     "pages/cart/cart",
+    "pages/order/order",
+    
+    "pages/panel/index",
     "pages/me/me"
   ],
   "window": {
