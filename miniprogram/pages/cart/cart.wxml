@@ -29,8 +29,8 @@
       thumb="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1509541942,3203478360&fm=26&gp=0.jpg"
     >
     <view slot="footer">
-      <van-button custom-class="numberChange" plain type="danger" size="mini">+1</van-button>
-      <van-button custom-class="numberChange" plain type="danger" size="mini">-1</van-button>
+      <van-button custom-class="numberChange" round plain type="danger" size="mini">+1</van-button>
+      <van-button custom-class="numberChange" round plain type="danger" size="mini">-1</van-button>
     </view>
     </van-card>
   </van-cell-group>

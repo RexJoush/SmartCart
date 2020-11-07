@@ -59,22 +59,6 @@ Page({
     })
   },
 
-  // 展示我的二维码
-  showQRcode: function () {
-    let that = this;
-    wx.getSetting({
-      withSubscriptions: true,
-      success: res => {
-        // console.log(res.authSetting['scope.userInfo']);
-        if(res.authSetting['scope.userInfo']) {
-          that.showPopup();
-        } else {
-          setTimeout(this.loginFirst,100);
-        }
-      }
-    })
-  },
-
 
   // 请先登录
   loginFirst: function(){
@@ -98,6 +82,7 @@ Page({
                 avatarUrl: res.userInfo.avatarUrl,
                 nickName: res.userInfo.nickName
               })
+              console.log(res.userInfo.avatarUrl);
             }
           })
         }

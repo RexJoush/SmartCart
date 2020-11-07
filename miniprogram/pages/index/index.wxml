@@ -13,7 +13,7 @@
     <text>{{n}}</text>
     </van-col>
     <van-col span="22" offset="1">
-      <van-button round type="info" bind:click="showPopup" size="large" color="#5F9EA0">查看我的二维码</van-button>
+      <van-button round type="info" bind:click="showQRcode" size="large" color="#5F9EA0">查看我的二维码</van-button>
       <!-- <van-cell
         custom-class="nav"
         value-class="arrow"

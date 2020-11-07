@@ -9,6 +9,8 @@ Page({
   },
 
   onLoad: function() {
+    let openid = this.onGetOpenid();
+    console.log(openid);
   },
 
   onGetOpenid: function() {
@@ -18,16 +20,13 @@ Page({
       data: {},
       success: res => {
         console.log('[云函数] [login] user openid: ', res.result.openid)
-        app.globalData.openid = res.result.openid
-        wx.navigateTo({
-          url: '../userConsole/userConsole',
-        })
+        // app.globalData.openid = res.result.openid
+
+        return res.result.openid;
+        
       },
       fail: err => {
         console.error('[云函数] [login] 调用失败', err)
-        wx.navigateTo({
-          url: '../deployFunctions/deployFunctions',
-        })
       }
     })
   },
@@ -43,6 +42,7 @@ Page({
   // 展示我的二维码
   showQRcode: function () {
     let that = this;
+
     wx.getSetting({
       withSubscriptions: true,
       success: res => {
