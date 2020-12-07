@@ -39,7 +39,7 @@
       width="500rpx"
       height="500rpx"
       fit="cover"
-      src="https://www.rexjoush.com/file/imgs/1.jpg"
+      src="{{qrcode}}"
     />
   </view>
 </van-popup>

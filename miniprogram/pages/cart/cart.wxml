@@ -1,42 +1,28 @@
 <!--pages/cart/cart.wxml-->
-<van-swipe-cell right-width="{{ 65 }}">
-  <van-cell-group>
-    <van-card
-      custom-class="commdity"
-      num="1"
-      price="3.00"
-      desc="300ml"
-      title="百事可乐"
-      thumb="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604161600505&di=158e641cf1c2fede41ef3b84cc0dae7d&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F00%2F81%2F99%2F8356e4183f27e64.jpg"
-    >
-    <view slot="footer">
-      <van-button custom-class="numberChange" round plain type="danger" size="mini">+1</van-button>
-      <van-button custom-class="numberChange" round plain type="danger" size="mini">-1</van-button>
-    </view>
-    </van-card>
-  </van-cell-group>
-  <view slot="right">删除</view>
-</van-swipe-cell>
+<block wx:for="{{commodityList}}" wx:key="*this">
+  <view bind:longpress="del" id="{{item.commodity_id}}">
+    <!-- <van-swipe-cell right-width="{{ 65 }}"> -->
+    <van-cell-group>
+      <van-card
+        custom-class="commdity"
+        num="{{item.number}}"
+        price="{{item.price}}"
+        desc="{{item.describe}}"
+        title="{{item.name}}" 
+        thumb="{{item.thumb}}"
+      >
+      <view slot="footer">
+        <van-button id="{{item.commodity_id}}" custom-class="numberChange" round plain type="danger" size="mini" bind:click="add">+1</van-button>
+        <van-button id="{{item.commodity_id}}" custom-class="numberChange" round plain type="danger" bind:click="minus" disabled="{{item.number == 1}}"  size="mini">-1</van-button>
+      </view>
+      </van-card>
+    </van-cell-group>
+    <!-- <view slot="right" id="{{item.commodity_id}}" bindtap="del">删除</view> -->
+  <!-- </van-swipe-cell> -->
+  </view>
+</block>
 
-<van-swipe-cell right-width="{{ 65 }}">
-  <van-cell-group>
-    <van-card
-      custom-class="commdity"
-      num="2"
-      price="3.00"
-      desc="绿箭无糖"
-      title="绿箭"
-      thumb="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1509541942,3203478360&fm=26&gp=0.jpg"
-    >
-    <view slot="footer">
-      <van-button custom-class="numberChange" round plain type="danger" size="mini">+1</van-button>
-      <van-button custom-class="numberChange" round plain type="danger" size="mini">-1</van-button>
-    </view>
-    </van-card>
-  </van-cell-group>
-  <view slot="right">删除</view>
-</van-swipe-cell>
-
+<!--
 <van-swipe-cell right-width="{{ 65 }}">
   <van-cell-group>
     <van-card
@@ -54,12 +40,15 @@
     </van-card>
   </van-cell-group>
   <view slot="right">删除</view>
-</van-swipe-cell>
+</van-swipe-cell> -->
 
 
 <!-- 结账栏 -->
 <van-submit-bar
-  price="{{ 1400 }}"
+  price="{{ totalPrice }}"
   button-text="提交订单"
   bind:submit="onSubmit"
 />
+
+<!-- 删除框 -->
+<van-dialog id="van-dialog" />

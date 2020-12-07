@@ -82,7 +82,6 @@ Page({
                 avatarUrl: res.userInfo.avatarUrl,
                 nickName: res.userInfo.nickName
               })
-              console.log(res.userInfo.avatarUrl);
             }
           })
         }
