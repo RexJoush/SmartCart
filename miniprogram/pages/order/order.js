@@ -6,13 +6,35 @@ Page({
    */
   data: {
     n:'\n',
+    orderList: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let openid = wx.getStorageSync('openid');
+    wx.cloud.callFunction({
+      name: 'http',
+      data: {
+        url: '/users/getOrder',
+        openid: openid,
+      },
+      success: res => {
+        let obj = JSON.parse(res.result);
+        console.log(obj.data);
+        this.setData({
+          orderList: obj.data
+        })
+        // 初始化购物车函数
+      },
+      fail: res => {
+        wx.showToast({
+          title: '获取失败，请检查网络',
+          icon: 'none',
+        })
+      }
+    })
   },
 
   /**

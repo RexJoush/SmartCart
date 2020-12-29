@@ -1,47 +1,59 @@
 <!--pages/order/order.wxml-->
-<van-panel title="订单" desc="2020.10.31 20:30:24" status="已完成" use-footer-slot custom-class="order" header-class="title">
-  <view class="content">
-    <view style="margin-bottom: 10rpx;">
-      <van-row>
-        <van-col span="12"><text style="font-weight: bolder;">商品名</text></van-col>
-        <van-col span="4"><text style="font-weight: bolder;">单价</text></van-col>
-        <van-col span="4"><text style="font-weight: bolder;">数量</text></van-col>
-        <van-col span="4"><text style="font-weight: bolder;">小计</text></van-col>
-      </van-row>
+<block wx:for="{{orderList}}" wx:key="*this">
+  <van-panel title="订单" desc="{{item.time}}" status="已完成" use-footer-slot custom-class="order" header-class="title">
+    <view class="content">
+      <view style="margin-bottom: 10rpx;">
+        <van-row>
+          <van-col span="12"><text style="font-weight: bolder;">商品名</text></van-col>
+          <van-col span="4"><text style="font-weight: bolder;">单价</text></van-col>
+          <van-col span="4"><text style="font-weight: bolder;">数量</text></van-col>
+          <van-col span="4"><text style="font-weight: bolder;">小计</text></van-col>
+        </van-row>
+      </view>
+      <block wx:for="{{item.commodityList}}" wx:key="*this">
+        <view class="commodity">
+        <van-row>
+            <van-col span="12">{{item.name}}</van-col>
+            <van-col span="4">￥{{item.price}}</van-col>
+            <van-col span="4">x {{item.amount}}</van-col>
+            <van-col span="4">￥{{item.subtotal}}</van-col>
+        </van-row>
+      </view>
+      </block>
+      <!-- <view class="commodity">
+        <van-row>
+            <van-col span="12">康师傅红烧牛肉面</van-col>
+            <van-col span="4">￥5</van-col>
+            <van-col span="4">x 1</van-col>
+            <van-col span="4">￥5</van-col>
+        </van-row>
+      </view>
+      <view class="commodity">
+        <van-row>
+            <van-col span="12">百事可乐</van-col>
+            <van-col span="4">￥3</van-col>
+            <van-col span="4">x 2</van-col>
+            <van-col span="4">￥6</van-col>
+        </van-row>
+      </view>
+      <view class="commodity">
+        <van-row>
+            <van-col span="12">绿箭</van-col>
+            <van-col span="4">￥3</van-col>
+            <van-col span="4">x 1</van-col>
+            <van-col span="4">￥3</van-col>
+        </van-row>
+      </view> -->
     </view>
-    <view class="commodity">
-      <van-row>
-          <van-col span="12">康师傅红烧牛肉面</van-col>
-          <van-col span="4">￥5</van-col>
-          <van-col span="4">x 1</van-col>
-          <van-col span="4">￥5</van-col>
-      </van-row>
+    <view slot="footer" class="footer">
+      <text style="color: red;">￥{{item.order_total / 100}}</text>
     </view>
-    <view class="commodity">
-      <van-row>
-          <van-col span="12">百事可乐</van-col>
-          <van-col span="4">￥3</van-col>
-          <van-col span="4">x 2</van-col>
-          <van-col span="4">￥6</van-col>
-      </van-row>
-    </view>
-    <view class="commodity">
-      <van-row>
-          <van-col span="12">绿箭</van-col>
-          <van-col span="4">￥3</van-col>
-          <van-col span="4">x 1</van-col>
-          <van-col span="4">￥3</van-col>
-      </van-row>
-    </view>
-  </view>
-  <view slot="footer" class="footer">
-    <text style="color: red;">￥15.30</text>
-  </view>
-</van-panel>
+  </van-panel>
+</block>
 
-<van-panel title="订单" desc="2020.10.31 20:30:24" status="已完成" use-footer-slot custom-class="order" header-class="title">
+<!-- <van-panel title="订单" desc="2020.10.31 20:30:24" status="已完成" use-footer-slot custom-class="order" header-class="title">
   <view class="content">
-    <view style="margin-bottom: 10rpx;">
+    <view style="margin-bottom: 10rpx;">b 
       <van-row>
         <van-col span="12"><text style="font-weight: bolder;">商品名</text></van-col>
         <van-col span="4"><text style="font-weight: bolder;">单价</text></van-col>
@@ -69,4 +81,4 @@
   <view slot="footer" class="footer">
     <text style="color: red;">￥21.00</text>
   </view>
-</van-panel>
+</van-panel> -->

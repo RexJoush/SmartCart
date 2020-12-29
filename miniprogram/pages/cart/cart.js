@@ -123,7 +123,37 @@ Page({
 
   },
 
-  
+  // 结账
+  onSubmit: function () {
+    console.log(this.data.map);
+    let map = this.data.commodityList;
+    let totalPrice = this.data.totalPrice;
+    wx.cloud.callFunction({
+      name: 'http',
+      data: {
+        url: '/cart/commit',
+        list: map,
+        totalPrice: totalPrice,
+      },
+      success: res => {
+        let obj = JSON.parse(res.result);
+        // 结账成功
+        if (obj.result == 1){
+          this.onLoad();
+        }
+        // 结账失败
+        else {
+          
+        }
+      },
+      fail: res => {
+        wx.showToast({
+          title: '结账失败，请检查网络',
+          icon: 'none',
+        })
+      }
+    })
+  },
 
 
   /*
@@ -196,6 +226,7 @@ Page({
     })
   },
 
+  // 更新价格
   updatePrice: function(){
     let totalPrice = 0;
     this.map.forEach(
@@ -204,10 +235,8 @@ Page({
       }
     )
   },
-
+ 
   
-
-
   // 将获取的商品列表数据进行格式化为一个 map 集合
   initMap: function (list){
     console.log(list);
